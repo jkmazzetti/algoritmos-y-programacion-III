@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/CursadaAYPIII.dir/main.c.o  -o CursadaAYPIII 

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/CLionProjects/CursadaAYPIII/main.c
+stdio.h
+-
+math.h
+-
+parImpar.h
+/home/ubuntu/CLionProjects/CursadaAYPIII/parImpar.h
+
+/home/ubuntu/CLionProjects/CursadaAYPIII/parImpar.h
+stdio.h
+-
+math.h
+-
+

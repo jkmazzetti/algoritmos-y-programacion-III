@@ -1,0 +1,4 @@
+/home/ubuntu/Downloads/CLion-2020.3.3/clion-2020.3.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/ubuntu/CLionProjects/CursadaAYPIII
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ubuntu/CLionProjects/CursadaAYPIII/cmake-build-debug
