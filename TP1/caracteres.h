@@ -1,8 +1,6 @@
-//
-// Created by ubuntu on 4/14/21.
-//
-
-#ifndef CURSADAAYPIII_CARACTERES_H
-#define CURSADAAYPIII_CARACTERES_H
-
-#endif //CURSADAAYPIII_CARACTERES_H
+void mostrarASCII(){
+    for(int i=0;i<127;i++){
+        printf("\n%c",i);
+        printf(": %d",i);
+    }
+}
