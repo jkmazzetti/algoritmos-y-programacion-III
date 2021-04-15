@@ -8,6 +8,8 @@
 
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/maximo.h
 
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/minimo.h
+
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/parImpar.h
 stdio.h
 -
@@ -23,4 +25,6 @@ TP1/promedio.h
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/promedio.h
 TP1/maximo.h
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/maximo.h
+TP1/minimo.h
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/minimo.h
 
