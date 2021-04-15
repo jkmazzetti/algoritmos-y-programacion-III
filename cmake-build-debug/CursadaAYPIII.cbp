@@ -79,6 +79,9 @@
 		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/caracteres.h">
 			<Option target="CursadaAYPIII"/>
 		</Unit>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/datos.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
 		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/maximo.h">
 			<Option target="CursadaAYPIII"/>
 		</Unit>

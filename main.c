@@ -5,6 +5,7 @@
 #include "TP1/minimo.h"
 #include "TP1/caracteres.h"
 #include "TP1/menu.h"
+#include "TP1/datos.h"
 
 int main() {
     int lista[]={2,3,4,5,6,9,1,55};
@@ -13,6 +14,7 @@ int main() {
 //    printf("Maximo: %d",maximo(lista));
 //    printf("Minimo %d",minimo(lista));
 //    mostrarASCII();
-    mostrarMenu();
+//    mostrarMenu();
+    solicitarDatos();
     return 0;
 }
