@@ -1,3 +1,3 @@
-/home/ubuntu/CLionProjects/CursadaAYPIII/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/CLionProjects/CursadaAYPIII/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/ubuntu/CLionProjects/CursadaAYPIII/cmake-build-debug/CMakeFiles/CursadaAYPIII.dir
+/home/ubuntu/CLionProjects/cursada-2021-apiii/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/CLionProjects/cursada-2021-apiii/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ubuntu/CLionProjects/cursada-2021-apiii/cmake-build-debug/CMakeFiles/CursadaAYPIII.dir

@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/CLionProjects/CursadaAYPIII
+# Install script for directory: /home/ubuntu/CLionProjects/cursada-2021-apiii
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ubuntu/CLionProjects/CursadaAYPIII/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/CLionProjects/cursada-2021-apiii/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include <math.h>
-#include "parImpar.h"
+#include "TP1/parImpar.h"
 
 int main() {
-    //determinarPar();
+    printf("%d",determinarPar());
     return 0;
 }

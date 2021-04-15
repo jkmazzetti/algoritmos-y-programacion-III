@@ -3,4 +3,4 @@ project(CursadaAYPIII C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(CursadaAYPIII main.c parImpar.h)
+add_executable(CursadaAYPIII main.c TP1/parImpar.h)
