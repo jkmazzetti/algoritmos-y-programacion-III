@@ -3,6 +3,7 @@
 
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP1/caracteres.h
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP1/maximo.h
+CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP1/menu.h
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP1/minimo.h
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP1/parImpar.h
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP1/promedio.h
