@@ -76,7 +76,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/caracteres.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/maximo.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/menu.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/minimo.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
 		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/parImpar.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/promedio.h">
 			<Option target="CursadaAYPIII"/>
 		</Unit>
 		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/main.c">
