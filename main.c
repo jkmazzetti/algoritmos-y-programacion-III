@@ -29,7 +29,7 @@ int main() {
     struct Persona primerHijo = {"Felipe", "Aguirre", 14};
     struct Persona segundoHijo = {"Maria", "Aguirre", 2};
     struct Persona hijos[2] = {primerHijo, segundoHijo};
-    struct Padre pc = {carlos, hijos};
+    struct Padre padreCarlos = {carlos, hijos};
     printf("%s%p%s%p%s", "¡Las direcciones de memoria ", pc.datosHijos[1].nombre, " y ", segundoHijo.nombre,
            " son distintas! \nSe esperaba que fueran iguales...\n");
     for (int i = 0; i < 5; i++) {
