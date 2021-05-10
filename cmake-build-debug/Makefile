@@ -143,60 +143,6 @@ CursadaAYPIII/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CursadaAYPIII.dir/build.make CMakeFiles/CursadaAYPIII.dir/build
 .PHONY : CursadaAYPIII/fast
 
-TP3/ListaEnlazadaSimple.o: TP3/ListaEnlazadaSimple.c.o
-
-.PHONY : TP3/ListaEnlazadaSimple.o
-
-# target to build an object file
-TP3/ListaEnlazadaSimple.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CursadaAYPIII.dir/build.make CMakeFiles/CursadaAYPIII.dir/TP3/ListaEnlazadaSimple.c.o
-.PHONY : TP3/ListaEnlazadaSimple.c.o
-
-TP3/ListaEnlazadaSimple.i: TP3/ListaEnlazadaSimple.c.i
-
-.PHONY : TP3/ListaEnlazadaSimple.i
-
-# target to preprocess a source file
-TP3/ListaEnlazadaSimple.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CursadaAYPIII.dir/build.make CMakeFiles/CursadaAYPIII.dir/TP3/ListaEnlazadaSimple.c.i
-.PHONY : TP3/ListaEnlazadaSimple.c.i
-
-TP3/ListaEnlazadaSimple.s: TP3/ListaEnlazadaSimple.c.s
-
-.PHONY : TP3/ListaEnlazadaSimple.s
-
-# target to generate assembly for a file
-TP3/ListaEnlazadaSimple.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CursadaAYPIII.dir/build.make CMakeFiles/CursadaAYPIII.dir/TP3/ListaEnlazadaSimple.c.s
-.PHONY : TP3/ListaEnlazadaSimple.c.s
-
-TP3/Nodo.o: TP3/Nodo.c.o
-
-.PHONY : TP3/Nodo.o
-
-# target to build an object file
-TP3/Nodo.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CursadaAYPIII.dir/build.make CMakeFiles/CursadaAYPIII.dir/TP3/Nodo.c.o
-.PHONY : TP3/Nodo.c.o
-
-TP3/Nodo.i: TP3/Nodo.c.i
-
-.PHONY : TP3/Nodo.i
-
-# target to preprocess a source file
-TP3/Nodo.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CursadaAYPIII.dir/build.make CMakeFiles/CursadaAYPIII.dir/TP3/Nodo.c.i
-.PHONY : TP3/Nodo.c.i
-
-TP3/Nodo.s: TP3/Nodo.c.s
-
-.PHONY : TP3/Nodo.s
-
-# target to generate assembly for a file
-TP3/Nodo.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CursadaAYPIII.dir/build.make CMakeFiles/CursadaAYPIII.dir/TP3/Nodo.c.s
-.PHONY : TP3/Nodo.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -233,12 +179,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CursadaAYPIII"
-	@echo "... TP3/ListaEnlazadaSimple.o"
-	@echo "... TP3/ListaEnlazadaSimple.i"
-	@echo "... TP3/ListaEnlazadaSimple.s"
-	@echo "... TP3/Nodo.o"
-	@echo "... TP3/Nodo.i"
-	@echo "... TP3/Nodo.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/CursadaAYPIII.dir/main.c.o CMakeFiles/CursadaAYPIII.dir/TP3/Nodo.c.o CMakeFiles/CursadaAYPIII.dir/TP3/ListaEnlazadaSimple.c.o  -o CursadaAYPIII 
+/usr/bin/cc -g   CMakeFiles/CursadaAYPIII.dir/main.c.o  -o CursadaAYPIII 

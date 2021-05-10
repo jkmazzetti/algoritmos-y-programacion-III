@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CursadaAYPIII.dir/TP3/ListaEnlazadaSimple.c.o"
-  "CMakeFiles/CursadaAYPIII.dir/TP3/Nodo.c.o"
   "CMakeFiles/CursadaAYPIII.dir/main.c.o"
   "CursadaAYPIII"
   "CursadaAYPIII.pdb"

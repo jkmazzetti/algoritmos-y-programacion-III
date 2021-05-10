@@ -1,16 +1,26 @@
 #include <stdio.h>
-#include "TP1/parImpar.h"
-#include "TP1/promedio.h"
-#include "TP1/maximo.h"
-#include "TP1/minimo.h"
-#include "TP1/caracteres.h"
-#include "TP1/menu.h"
-#include "TP1/datos.h"
-#include "TP2/estructuras.h"
+#include "TP3/listaEnlazadaSimple.h"
 
 int main() {
+//TP3
+    struct ListaEnlazada *miLista = crearLista();
+    agregarElemento(miLista, 12);
+    agregarElemento(miLista, 15);
+    agregarElemento(miLista, 13);
+    agregarElemento(miLista, 15);
+    mostrar(miLista);
+    printf("\nCantidad de elementos: %d", miLista->cantidadElementos);
+    printf("\nElemento mayor: %d", miLista->mayor);
+    printf("\nElemento menor: %d", miLista->menor);
+    printf("\nBusqueda de 12: %d",buscarElemento(miLista,12));
+    printf("\nBusqueda de 5: %d",buscarElemento(miLista,5));
+    printf("\nEliminar 15: %d",eliminarElemento(miLista,15));
+    mostrar(miLista);
 
-/*
+    return 0;
+}
+
+/* INCLUIR EN MAIN PARA SU EJECUCION.
     TP1:
 
     int lista[]={2,3,4,5,6,9,1,55};
@@ -24,7 +34,7 @@ int main() {
 
  */
 
-//TP2:
+/*TP2:
     struct Persona carlos = {"Carlos", "Aguirre", 54};
     struct Persona primerHijo = {"Felipe", "Aguirre", 14};
     struct Persona segundoHijo = {"Maria", "Aguirre", 2};
@@ -38,5 +48,5 @@ int main() {
     printf("\n\n%s",
            "Se debe crear una funcion que asigne un nuevo puntero para cada nueva instancia."
            "\nDe lo contrario no crea nueva instancia sino que reescribe siempre la misma.");
-    return 0;
-}
+
+*/

@@ -4,8 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/ubuntu/CLionProjects/cursada-2021-apiii/TP3/ListaEnlazadaSimple.c" "/home/ubuntu/CLionProjects/cursada-2021-apiii/cmake-build-debug/CMakeFiles/CursadaAYPIII.dir/TP3/ListaEnlazadaSimple.c.o"
-  "/home/ubuntu/CLionProjects/cursada-2021-apiii/TP3/Nodo.c" "/home/ubuntu/CLionProjects/cursada-2021-apiii/cmake-build-debug/CMakeFiles/CursadaAYPIII.dir/TP3/Nodo.c.o"
   "/home/ubuntu/CLionProjects/cursada-2021-apiii/main.c" "/home/ubuntu/CLionProjects/cursada-2021-apiii/cmake-build-debug/CMakeFiles/CursadaAYPIII.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
