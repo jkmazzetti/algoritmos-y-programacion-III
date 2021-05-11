@@ -5,7 +5,8 @@ int main() {
 //TP3
     struct ListaEnlazada *miLista = crearLista();
     agregarElemento(miLista, 12);
-    agregarElemento(miLista, 15);
+    agregarElemento(miLista, 11);
+    agregarElemento(miLista, 14);
     agregarElemento(miLista, 13);
     agregarElemento(miLista, 15);
     mostrar(miLista);
@@ -14,7 +15,8 @@ int main() {
     printf("\nElemento menor: %d", miLista->menor);
     printf("\nBusqueda de 12: %d",buscarElemento(miLista,12));
     printf("\nBusqueda de 5: %d",buscarElemento(miLista,5));
-    printf("\nEliminar 15: %d",eliminarElemento(miLista,15));
+    printf("\nEliminar 11: %d",eliminarElemento(miLista,11));
+    printf("\nElemento menor: %d", miLista->menor);
     mostrar(miLista);
 
     return 0;

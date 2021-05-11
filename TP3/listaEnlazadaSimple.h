@@ -43,21 +43,28 @@ void agregarElemento(struct ListaEnlazada *miLista, int valor) {
     } else {
         struct Nodo *aux = malloc(sizeof(struct Nodo));
         aux = miLista->inicial;
-        while (!existe && aux->siguiente != NULL) {
-            if (valor == aux->valor) {
-                existe = true;
+        if(nuevo->valor<miLista->inicial->valor){
+            miLista->menor=valor;
+            nuevo->siguiente=miLista->inicial;
+            miLista->inicial=nuevo;
+            existe=true;
+        }else {
+            while (!existe && aux->siguiente != NULL) {
+                if (valor == aux->valor) {
+                    existe = true;
+                }
+                aux = aux->siguiente;
             }
-            aux = aux->siguiente;
-        }
-        if (!existe) {
-            aux->siguiente = nuevo;
-            if (valor < miLista->menor) {
-                miLista->menor = valor;
+            if (!existe) {
+                aux->siguiente = nuevo;
+                if (valor < miLista->menor) {
+                    miLista->menor = valor;
+                }
+                if (valor > miLista->mayor) {
+                    miLista->mayor = valor;
+                }
+                miLista->cantidadElementos++;
             }
-            if (valor > miLista->mayor) {
-                miLista->mayor = valor;
-            }
-            miLista->cantidadElementos++;
         }
     }
 }
@@ -85,6 +92,7 @@ bool buscarElemento(struct ListaEnlazada *miLista, int valor) {
                 aux = aux->siguiente;
             }
         }
+
     }
     return resultado;
 }
@@ -111,6 +119,7 @@ bool eliminarElemento(struct ListaEnlazada *miLista, int valor) {
                 }
             }
         }
+        miLista->menor=miLista->inicial->valor;
     }
     return eliminado;
 
@@ -119,11 +128,11 @@ bool eliminarElemento(struct ListaEnlazada *miLista, int valor) {
 void interfazUsuario(struct ListaEnlazada *miLista) {
     int opcion;
     printf("Lista enlazada simple.\n1.Agregar elemento.\n0.Terminar.\n");
-    scanf("%d", &opcion);
+    scanf("%d", opcion);
     if (opcion != 0) {
         int valor;
         printf("Elemento a agregar: ");
-        scanf("%d", &valor);
+        scanf("%d", valor);
         agregarElemento(miLista, valor);
     }
 }
