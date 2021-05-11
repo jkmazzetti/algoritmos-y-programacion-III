@@ -43,12 +43,12 @@ void agregarElemento(struct ListaEnlazada *miLista, int valor) {
     } else {
         struct Nodo *aux = malloc(sizeof(struct Nodo));
         aux = miLista->inicial;
-        if(nuevo->valor<miLista->inicial->valor){
-            miLista->menor=valor;
-            nuevo->siguiente=miLista->inicial;
-            miLista->inicial=nuevo;
-            existe=true;
-        }else {
+        if (nuevo->valor < miLista->inicial->valor) {
+            miLista->menor = valor;
+            nuevo->siguiente = miLista->inicial;
+            miLista->inicial = nuevo;
+            existe = true;
+        } else {
             while (!existe && aux->siguiente != NULL) {
                 if (valor == aux->valor) {
                     existe = true;
@@ -68,6 +68,7 @@ void agregarElemento(struct ListaEnlazada *miLista, int valor) {
         }
     }
 }
+
 void mostrar(struct ListaEnlazada *miLista) {
     struct Nodo *aux = malloc(sizeof(struct Nodo));
     aux = miLista->inicial;
@@ -100,26 +101,24 @@ bool buscarElemento(struct ListaEnlazada *miLista, int valor) {
 bool eliminarElemento(struct ListaEnlazada *miLista, int valor) {
     bool eliminado = false;
     if (valor >= miLista->menor && valor <= miLista->mayor) {
-        if(miLista->inicial->valor==valor){
-            miLista->inicial=miLista->inicial->siguiente;
-            eliminado=true;
+        if (miLista->inicial->valor == valor) {
+            miLista->inicial = miLista->inicial->siguiente;
+            eliminado = true;
         } else {
             struct Nodo *auxAnt = malloc(sizeof(struct Nodo));
             struct Nodo *auxSig = malloc(sizeof(struct Nodo));
-            auxAnt = miLista->inicial;
             auxSig = miLista->inicial;
-
             while (!eliminado && auxSig->siguiente != NULL) {
-                auxAnt=auxSig;
-                auxSig=auxSig->siguiente;
+                auxAnt = auxSig;
+                auxSig = auxSig->siguiente;
                 if (valor == auxSig->valor) {
-                    auxAnt->siguiente=auxSig->siguiente;
-                    auxSig->siguiente=auxAnt->siguiente;
-                    eliminado=true;
+                    auxAnt->siguiente = auxSig->siguiente;
+                    auxSig->siguiente = auxAnt->siguiente;
+                    eliminado = true;
                 }
             }
         }
-        miLista->menor=miLista->inicial->valor;
+        miLista->menor = miLista->inicial->valor;
     }
     return eliminado;
 
