@@ -40,34 +40,37 @@ void agregarElemento(struct ListaEnlazada *miLista, int valor) {
         miLista->cantidadElementos = 1;
         miLista->menor = valor;
         miLista->mayor = valor;
+    } else if (valor < miLista->inicial->valor) {
+        miLista->menor = valor;
+        nuevo->siguiente = miLista->inicial;
+        miLista->inicial = nuevo;
+        miLista->cantidadElementos++;
+        existe = true;
     } else {
-        struct Nodo *aux = malloc(sizeof(struct Nodo));
-        aux = miLista->inicial;
-        if (nuevo->valor < miLista->inicial->valor) {
-            miLista->menor = valor;
-            nuevo->siguiente = miLista->inicial;
-            miLista->inicial = nuevo;
+        struct Nodo *auxSig = malloc(sizeof(struct Nodo));
+        struct Nodo *auxAnt = malloc(sizeof(struct Nodo));
+        auxSig = miLista->inicial;
+        auxAnt = miLista->inicial;
+        while (!existe && auxSig->siguiente != NULL && valor > auxAnt->valor) {
+            auxAnt = auxSig;
+            auxSig = auxSig->siguiente;
+        }
+        if (valor == auxAnt->valor) {
             existe = true;
-        } else {
-            while (!existe && aux->siguiente != NULL) {
-                if (valor == aux->valor) {
-                    existe = true;
-                }
-                aux = aux->siguiente;
+        }
+        if (!existe) {
+            if (valor < auxSig->valor) {
+                auxAnt->siguiente = nuevo;
+                nuevo->siguiente = auxSig;
+            } else {
+                auxSig->siguiente = nuevo;
+                miLista->mayor = valor;
             }
-            if (!existe) {
-                aux->siguiente = nuevo;
-                if (valor < miLista->menor) {
-                    miLista->menor = valor;
-                }
-                if (valor > miLista->mayor) {
-                    miLista->mayor = valor;
-                }
-                miLista->cantidadElementos++;
-            }
+            miLista->cantidadElementos++;
         }
     }
 }
+
 
 void mostrar(struct ListaEnlazada *miLista) {
     struct Nodo *aux = malloc(sizeof(struct Nodo));
@@ -81,17 +84,18 @@ void mostrar(struct ListaEnlazada *miLista) {
 
 bool buscarElemento(struct ListaEnlazada *miLista, int valor) {
     bool resultado = false;
-    if (valor < miLista->menor || valor > miLista->mayor) {
-        resultado = -false;
-    } else {
+    if (valor == miLista->mayor || valor == miLista->menor) {
+        resultado = true;
+    }else if (valor < miLista->menor || valor > miLista->mayor) {
+        resultado = false;
+    }else {
         struct Nodo *aux = malloc(sizeof(struct Nodo));
         aux = miLista->inicial;
         while (resultado == false && aux->siguiente != NULL) {
             if (aux->valor == valor) {
                 resultado = true;
-            } else {
-                aux = aux->siguiente;
             }
+            aux = aux->siguiente;
         }
 
     }
@@ -100,38 +104,40 @@ bool buscarElemento(struct ListaEnlazada *miLista, int valor) {
 
 bool eliminarElemento(struct ListaEnlazada *miLista, int valor) {
     bool eliminado = false;
+    struct Nodo *auxAnt = malloc(sizeof(struct Nodo));
+    struct Nodo *auxSig = malloc(sizeof(struct Nodo));
+    auxSig = miLista->inicial;
     if (valor >= miLista->menor && valor <= miLista->mayor) {
         if (miLista->inicial->valor == valor) {
             miLista->inicial = miLista->inicial->siguiente;
+            miLista->menor = miLista->inicial->valor;
             eliminado = true;
         } else {
-            struct Nodo *auxAnt = malloc(sizeof(struct Nodo));
-            struct Nodo *auxSig = malloc(sizeof(struct Nodo));
-            auxSig = miLista->inicial;
+
             while (!eliminado && auxSig->siguiente != NULL) {
                 auxAnt = auxSig;
                 auxSig = auxSig->siguiente;
+
                 if (valor == auxSig->valor) {
                     auxAnt->siguiente = auxSig->siguiente;
                     auxSig->siguiente = auxAnt->siguiente;
                     eliminado = true;
                 }
+                if (valor == miLista->mayor && auxSig->siguiente == NULL) {
+                    auxAnt->siguiente = NULL;
+                    eliminado = true;
+                }
             }
         }
-        miLista->menor = miLista->inicial->valor;
+        if (eliminado) {
+            miLista->cantidadElementos--;
+            miLista->menor = miLista->inicial->valor;
+            if (valor == miLista->mayor) {
+                miLista->mayor = auxAnt->valor;
+            }
+        }
+
     }
     return eliminado;
 
-}
-
-void interfazUsuario(struct ListaEnlazada *miLista) {
-    int opcion;
-    printf("Lista enlazada simple.\n1.Agregar elemento.\n0.Terminar.\n");
-    scanf("%d", opcion);
-    if (opcion != 0) {
-        int valor;
-        printf("Elemento a agregar: ");
-        scanf("%d", valor);
-        agregarElemento(miLista, valor);
-    }
 }
