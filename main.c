@@ -30,6 +30,9 @@ int main() {
     printf("\nEliminar 11: %d", eliminarElemento(miLista, 11));
     mostrar(miLista);
     printf("\nEliminar 15: %d", eliminarElemento(miLista, 15));
+    printf("\nEliminar 0: %d", eliminarElemento(miLista, 0));
+    mostrar(miLista);
+    printf("\nElemento menor: %d", miLista->menor);
     return 0;
 }
 
