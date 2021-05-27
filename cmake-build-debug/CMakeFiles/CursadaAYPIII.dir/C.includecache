@@ -22,6 +22,8 @@ stdio.h
 
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/promedio.h
 
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP2/estructuras.h
+
 /home/ubuntu/CLionProjects/cursada-2021-apiii/main.c
 stdio.h
 -
@@ -39,4 +41,6 @@ TP1/menu.h
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/menu.h
 TP1/datos.h
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/datos.h
+TP2/estructuras.h
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP2/estructuras.h
 

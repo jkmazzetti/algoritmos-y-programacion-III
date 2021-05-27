@@ -8,5 +8,6 @@ CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP1/menu.h
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP1/minimo.h
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP1/parImpar.h
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP1/promedio.h
+CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP2/estructuras.h
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../main.c
 

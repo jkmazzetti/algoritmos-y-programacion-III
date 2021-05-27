@@ -3,4 +3,4 @@ project(CursadaAYPIII C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(CursadaAYPIII main.c TP1/parImpar.h TP1/promedio.h TP1/maximo.h TP1/minimo.h TP1/caracteres.h TP1/menu.h TP1/datos.h)
+add_executable(CursadaAYPIII main.c TP1/parImpar.h TP1/promedio.h TP1/maximo.h TP1/minimo.h TP1/caracteres.h TP1/menu.h TP1/datos.h TP2/estructuras.h)

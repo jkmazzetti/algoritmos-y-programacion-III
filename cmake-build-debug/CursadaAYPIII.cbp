@@ -97,6 +97,9 @@
 		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/promedio.h">
 			<Option target="CursadaAYPIII"/>
 		</Unit>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP2/estructuras.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
 		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/main.c">
 			<Option target="CursadaAYPIII"/>
 		</Unit>
