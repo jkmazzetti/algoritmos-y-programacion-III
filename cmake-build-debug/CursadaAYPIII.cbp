@@ -76,6 +76,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/interfazUsuario.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
 		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/caracteres.h">
 			<Option target="CursadaAYPIII"/>
 		</Unit>
