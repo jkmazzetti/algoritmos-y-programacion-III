@@ -2,7 +2,43 @@
 #include "TP3/listaEnlazadaSimple.h"
 
 int main() {
-//TP3
+    struct ListaEnlazada *listaAlumnos = crearLista();
+    struct ListaEnlazada *listaMateria= crearLista();
+
+    return 0;
+}
+
+//INCLUIR EN MAIN PARA SU EJECUCION.
+/*TP1:
+
+    int lista[]={2,3,4,5,6,9,1,55};
+    printf("¿Es par? %d",determinarPar());
+    printf("Promedio: %.6f",promediar());
+    printf("Maximo: %d",maximo(lista));
+    printf("Minimo %d",minimo(lista));
+    mostrarASCII();
+    mostrarMenu();
+    solicitarDatos();
+
+ */
+
+/*TP2:
+    struct Persona carlos = {"Carlos", "Aguirre", 54};
+    struct Persona primerHijo = {"Felipe", "Aguirre", 14};
+    struct Persona segundoHijo = {"Maria", "Aguirre", 2};
+    struct Persona hijos[2] = {primerHijo, segundoHijo};
+    struct Padre padreCarlos = {carlos, hijos};
+    printf("%s%p%s%p%s", "¡Las direcciones de memoria ", padreCarlos.datosHijos[1].nombre, " y ", segundoHijo.nombre,
+           " son distintas! \nSe esperaba que fueran iguales...\n");
+    for (int i = 0; i < 5; i++) {
+        printf("\n%p ", crearPersona("Carlos", "Aguirre", 5 * i));
+    }
+    printf("\n\n%s",
+           "Se debe crear una funcion que asigne un nuevo puntero para cada nueva instancia."
+           "\nDe lo contrario no crea nueva instancia sino que reescribe siempre la misma.");
+
+*/
+/*TP3:
     struct ListaEnlazada *miLista = crearLista();
     agregarElemento(miLista, 11);
     agregarElemento(miLista, 11);
@@ -33,36 +69,6 @@ int main() {
     printf("\nEliminar 0: %d", eliminarElemento(miLista, 0));
     mostrar(miLista);
     printf("\nElemento menor: %d", miLista->menor);
-    return 0;
-}
 
-/* INCLUIR EN MAIN PARA SU EJECUCION.
-    TP1:
+     */
 
-    int lista[]={2,3,4,5,6,9,1,55};
-    printf("¿Es par? %d",determinarPar());
-    printf("Promedio: %.6f",promediar());
-    printf("Maximo: %d",maximo(lista));
-    printf("Minimo %d",minimo(lista));
-    mostrarASCII();
-    mostrarMenu();
-    solicitarDatos();
-
- */
-
-/*TP2:
-    struct Persona carlos = {"Carlos", "Aguirre", 54};
-    struct Persona primerHijo = {"Felipe", "Aguirre", 14};
-    struct Persona segundoHijo = {"Maria", "Aguirre", 2};
-    struct Persona hijos[2] = {primerHijo, segundoHijo};
-    struct Padre padreCarlos = {carlos, hijos};
-    printf("%s%p%s%p%s", "¡Las direcciones de memoria ", padreCarlos.datosHijos[1].nombre, " y ", segundoHijo.nombre,
-           " son distintas! \nSe esperaba que fueran iguales...\n");
-    for (int i = 0; i < 5; i++) {
-        printf("\n%p ", crearPersona("Carlos", "Aguirre", 5 * i));
-    }
-    printf("\n\n%s",
-           "Se debe crear una funcion que asigne un nuevo puntero para cada nueva instancia."
-           "\nDe lo contrario no crea nueva instancia sino que reescribe siempre la misma.");
-
-*/

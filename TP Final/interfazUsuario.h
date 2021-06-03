@@ -1,4 +1,4 @@
-int mostrarMenu() {
+int mostrarMenu(ListaEnlazada listaAlumnos, ListaEnlazada listaMaterias) {
     int opcionPrincipal;
     printf("1- Buscar estudiante.\n");
     printf("2- Agregar estudiante.\n");
