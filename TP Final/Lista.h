@@ -10,12 +10,14 @@ struct ListaEnlazada {
         struct Materia{
             char *nombre;
             int codigo;
+            double nota;
         };
         struct Alumno{
             char *nombre;
             char *apellido;
             int edad;
             int legajo;
+            double promedio;
             struct ListaEnlazada *materiasAprobadas;
             struct ListaEnlazada *materiasEnCurso;
         };
@@ -121,8 +123,8 @@ bool buscarElemento(struct ListaEnlazada *miLista, int valor) {
 
 bool eliminarElemento(struct ListaEnlazada *miLista, int valor) {
     bool eliminado = false;
-    struct Nodo *auxAnt;
-    struct Nodo *auxSig;
+    struct Nodo *auxAnt = malloc(sizeof(struct Nodo));
+    struct Nodo *auxSig = malloc(sizeof(struct Nodo));
     auxSig = miLista->inicial;
     if (valor >= miLista->menor && valor <= miLista->mayor) {
         if (miLista->inicial->valor == valor) {
@@ -159,8 +161,9 @@ bool eliminarElemento(struct ListaEnlazada *miLista, int valor) {
 
 }
 
+
 //Agregar elemento nueva version
-bool listadoOrdenadoPorClave(struct ListaEnlazada *miLista, struct Nodo *nuevo) {
+bool agregarElemetoPorClave(struct ListaEnlazada *miLista, struct Nodo *nuevo) {
     bool existe = false;
     bool agregado=false;
     if (miLista->inicial == NULL) {

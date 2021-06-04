@@ -10,7 +10,19 @@ struct Alumno *crearAlumno(int legajo, int edad, char *nombre, char *apellido) {
     return alumno;
 }
 
-void mostrarAlumnos(int paginado, struct ListaEnlazada *miLista) {
+bool inscribirAMateria(struct Alumno *alumno, struct Nodo *materia) {
+    bool inscripto=false;
+    int limite=5;
+    if(alumno->materiasEnCurso->cantidadElementos<limite && !buscarElemento(alumno->materiasAprobadas,materia->valor)){
+        agregarElemetoPorClave(alumno->materiasEnCurso, materia);
+        inscripto=true;
+    }else{
+        printf("Alconzó el limite de materias que puede cursar.");
+    }
+    return inscripto;
+}
+
+void mostrarAlumnos(struct ListaEnlazada *miLista) {
     struct Nodo *aux = malloc(sizeof(struct Nodo));
     aux = miLista->inicial;
     printf("\nLista:");
@@ -21,9 +33,24 @@ void mostrarAlumnos(int paginado, struct ListaEnlazada *miLista) {
         printf(" %s", aux->alumno->apellido);
         printf(" %s", aux->alumno->nombre);
         printf(" %d", aux->alumno->edad);
-        c++;
+        aux = aux->siguiente;
+    }
+}
+void mostrarAlumnosPorEdad(int paginado, struct ListaEnlazada *miLista, int min, int max) {
+    struct Nodo *aux = malloc(sizeof(struct Nodo));
+    aux = miLista->inicial;
+    printf("\nLista:");
+    int c = 0;
+    while (aux != NULL) {
+        if(aux->alumno->edad>=min && aux->alumno->edad<=max ) {
+            printf("%s %d", "\n", aux->valor);
+            printf(" %s", aux->alumno->apellido);
+            printf(" %s", aux->alumno->nombre);
+            printf(" %d", aux->alumno->edad);
+            c++;
+        }
         char s = 'n';
-        while (c == paginado) {
+        if (c == paginado) {
             printf("\n Presione 'c' para continuar...\n");
             scanf("%d", s);
             if (s = 'c') {
@@ -31,6 +58,8 @@ void mostrarAlumnos(int paginado, struct ListaEnlazada *miLista) {
                 s = 'v';
                 aux = aux->siguiente;
             }
+        } else{
+            aux = aux->siguiente;
         }
     }
 }

@@ -6,36 +6,52 @@
 int main() {
     struct ListaEnlazada *listaAlumnosPorLegajo = crearLista();
     struct ListaEnlazada *listaAlumnosPorEdad = crearLista();
-    struct Alumno *alumno1,*alumno2,*alumno3;
+    struct Alumno *alumno1, *alumno2, *alumno3;
     char *nombre1 = "Maria";
     char *nombre2 = "Roberto";
     char *nombre3 = "Ines";
     char *apellido1 = "Lorenzo";
     char *apellido2 = "Felipe";
     char *apellido3 = "Fernandez";
-    int edad1 = 35;
-    int edad2 = 30;
-    int edad3 = 45;
+    int edad1 = 30;
+    int edad2 = 18;
+    int edad3 = 20;
     alumno1 = crearAlumno(142541, edad1, nombre1, apellido1);
     alumno2 = crearAlumno(100001, edad2, nombre2, apellido2);
     alumno3 = crearAlumno(111111, edad3, nombre3, apellido3);
     char *nombreM1 = "Fisica";
-    struct Materia *materia1;
     int cod1 = 33;
-    materia1=crearMateria(cod1, nombreM1);
-    printf("%d %s",materia1->codigo,materia1->nombre);
-    if(listadoOrdenadoPorClave(listaAlumnosPorLegajo, nodoAlumno(alumno1))){
-        listaPorEdad(listaAlumnosPorEdad,nodoAlumno(alumno1));
+    struct Materia *materia1;
+    char *nombreM2 = "Algebra";
+    int cod2 = 36;
+    struct Materia *materia2;
+    materia1 = crearMateria(cod1, nombreM1);
+    materia2 = crearMateria(cod2, nombreM2);
+    if (agregarElemetoPorClave(listaAlumnosPorLegajo, nodoAlumno(alumno1))) {
+        listaPorEdad(listaAlumnosPorEdad, nodoAlumno(alumno1));
     }
-    if(listadoOrdenadoPorClave(listaAlumnosPorLegajo, nodoAlumno(alumno2))){
-        listaPorEdad(listaAlumnosPorEdad,nodoAlumno(alumno2));
+    if (agregarElemetoPorClave(listaAlumnosPorLegajo, nodoAlumno(alumno2))) {
+        listaPorEdad(listaAlumnosPorEdad, nodoAlumno(alumno2));
     }
-    if(listadoOrdenadoPorClave(listaAlumnosPorLegajo, nodoAlumno(alumno3))){
-        listaPorEdad(listaAlumnosPorEdad,nodoAlumno(alumno3));
+    if (agregarElemetoPorClave(listaAlumnosPorLegajo, nodoAlumno(alumno3))) {
+        listaPorEdad(listaAlumnosPorEdad, nodoAlumno(alumno3));
     }
-    mostrarAlumnos(1, listaAlumnosPorLegajo);
-    mostrarAlumnos(1, listaAlumnosPorEdad);
-    printf("%s%d", "\n", listaAlumnosPorLegajo->cantidadElementos);
+    //mostrarAlumnos(1, listaAlumnosPorLegajo);
+    //mostrarAlumnos(1, listaAlumnosPorEdad);
+    //mostrarAlumnosPorEdad(1,listaAlumnosPorEdad,20,30);
+    //printf("%s%d", "\n", listaAlumnosPorLegajo->cantidadElementos);
+    //agregarElemetoPorClave(alumno1->materiasAprobadas,nodoMateria(materia2));
+    inscribirAMateria(alumno1, nodoMateria(materia1));
+    inscribirAMateria(alumno1, nodoMateria(materia2));
+    mostrarMaterias(alumno1->materiasEnCurso);
+    eliminarElemento(listaAlumnosPorLegajo, 142541);
+    eliminarElemento(listaAlumnosPorLegajo, 111111);
+    //eliminarElemento(listaAlumnosPorLegajo, 100001);
+    mostrarAlumnos(listaAlumnosPorLegajo);
+    mostrarMaterias(alumno1->materiasEnCurso);
+    calificarMateria(alumno1,nodoMateria(materia2),8.5);
+    mostrarMaterias(alumno1->materiasAprobadas);
+    mostrarMaterias(alumno1->materiasEnCurso);
     return 0;
 }
 
