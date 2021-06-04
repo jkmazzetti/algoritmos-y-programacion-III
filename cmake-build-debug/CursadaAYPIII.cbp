@@ -82,6 +82,9 @@
 		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Carrera.h">
 			<Option target="CursadaAYPIII"/>
 		</Unit>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/GeneradorAlumnos.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
 		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Materia.h">
 			<Option target="CursadaAYPIII"/>
 		</Unit>

@@ -2,8 +2,8 @@
 #include "TP3/listaEnlazadaSimple.h"
 
 int main() {
-    struct ListaEnlazada *listaAlumnos = crearLista();
-    struct ListaEnlazada *listaMateria= crearLista();
+    struct listaEnlazada *listaAlumnos = crearLista();
+    struct listaEnlazada *listaMateria= crearLista();
 
     return 0;
 }
@@ -39,7 +39,7 @@ int main() {
 
 */
 /*TP3:
-    struct ListaEnlazada *miLista = crearLista();
+    struct listaEnlazada *miLista = crearLista();
     agregarElemento(miLista, 11);
     agregarElemento(miLista, 11);
     agregarElemento(miLista, 12);
