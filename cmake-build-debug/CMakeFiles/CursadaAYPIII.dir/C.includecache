@@ -18,13 +18,15 @@ stdbool.h
 
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Materia.h
 
-/home/ubuntu/CLionProjects/cursada-2021-apiii/main.c
-stdio.h
--
-TP Final/Lista.h
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/interfazUsuario.h
+Lista.h
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Lista.h
-TP Final/Alumno.h
+Alumno.h
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Alumno.h
-TP Final/Materia.h
+Materia.h
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Materia.h
+
+/home/ubuntu/CLionProjects/cursada-2021-apiii/main.c
+TP Final/interfazUsuario.h
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/interfazUsuario.h
 

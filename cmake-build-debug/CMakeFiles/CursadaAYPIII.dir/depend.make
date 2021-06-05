@@ -4,5 +4,6 @@
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP\ Final/Alumno.h
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP\ Final/Lista.h
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP\ Final/Materia.h
+CMakeFiles/CursadaAYPIII.dir/main.c.o: ../TP\ Final/interfazUsuario.h
 CMakeFiles/CursadaAYPIII.dir/main.c.o: ../main.c
 

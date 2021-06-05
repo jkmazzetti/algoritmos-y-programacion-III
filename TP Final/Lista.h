@@ -6,12 +6,12 @@ struct ListaEnlazada {
     struct Nodo {
         struct Carrera{
             struct ListaEnlazada *materias;
-        };
+        }Carrera;
         struct Materia{
             char *nombre;
             int codigo;
             double nota;
-        };
+        }Materia;
         struct Alumno{
             char *nombre;
             char *apellido;
@@ -20,12 +20,12 @@ struct ListaEnlazada {
             double promedio;
             struct ListaEnlazada *materiasAprobadas;
             struct ListaEnlazada *materiasEnCurso;
-        };
+        }Alumno;
         int valor;
         struct Alumno *alumno;
         struct Materia *materia;
         struct Nodo *siguiente;
-    };
+    }Nodo;
     int cantidadElementos;
     int menor;
     int mayor;
@@ -51,7 +51,7 @@ struct ListaEnlazada *crearLista() {
 }
 
 void agregarElemento(struct ListaEnlazada *miLista, int valor) {
-    struct Nodo *nuevo = malloc(sizeof(struct Nodo));
+    struct Nodo *nuevo;
     bool existe = false;
     nuevo = crearNodo(valor);
     if (miLista->inicial == NULL) {
@@ -70,7 +70,7 @@ void agregarElemento(struct ListaEnlazada *miLista, int valor) {
         struct Nodo *auxAnt;
         auxSig = miLista->inicial;
         auxAnt = miLista->inicial;
-        while (!existe && auxSig->siguiente != NULL && valor > auxAnt->valor) {
+        while (auxSig->siguiente != NULL && valor > auxAnt->valor) {
             auxAnt = auxSig;
             auxSig = auxSig->siguiente;
         }
@@ -92,9 +92,8 @@ void agregarElemento(struct ListaEnlazada *miLista, int valor) {
 
 
 void mostrar(struct ListaEnlazada *miLista) {
-    struct Nodo *aux = malloc(sizeof(struct Nodo));
+    struct Nodo *aux;
     aux = miLista->inicial;
-    printf("\nLista:");
     while (aux != NULL) {
         printf(" %d", aux->valor);
         aux = aux->siguiente;
@@ -108,7 +107,7 @@ bool buscarElemento(struct ListaEnlazada *miLista, int valor) {
     }else if (valor < miLista->menor || valor > miLista->mayor) {
         resultado = false;
     }else {
-        struct Nodo *aux = malloc(sizeof(struct Nodo));
+        struct Nodo *aux;
         aux = miLista->inicial;
         while (resultado == false && aux->siguiente != NULL) {
             if (aux->valor == valor) {
@@ -124,7 +123,7 @@ bool buscarElemento(struct ListaEnlazada *miLista, int valor) {
 bool eliminarElemento(struct ListaEnlazada *miLista, int valor) {
     bool eliminado = false;
     struct Nodo *auxAnt = malloc(sizeof(struct Nodo));
-    struct Nodo *auxSig = malloc(sizeof(struct Nodo));
+    struct Nodo *auxSig;
     auxSig = miLista->inicial;
     if (valor >= miLista->menor && valor <= miLista->mayor) {
         if (miLista->inicial->valor == valor) {
@@ -132,7 +131,6 @@ bool eliminarElemento(struct ListaEnlazada *miLista, int valor) {
             miLista->menor = miLista->inicial->valor;
             eliminado = true;
         } else {
-
             while (!eliminado && auxSig->siguiente != NULL) {
                 auxAnt = auxSig;
                 auxSig = auxSig->siguiente;

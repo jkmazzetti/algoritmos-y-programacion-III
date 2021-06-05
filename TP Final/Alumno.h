@@ -1,5 +1,5 @@
 
-struct Alumno *crearAlumno(int legajo, int edad, char *nombre, char *apellido) {
+struct Alumno *crearAlumno(int legajo, int edad, char nombre[], char apellido[]) {
     struct Alumno *alumno = malloc(sizeof(struct Alumno));
     alumno->legajo = legajo;
     alumno->edad = edad;
@@ -23,48 +23,87 @@ bool inscribirAMateria(struct Alumno *alumno, struct Nodo *materia) {
 }
 
 void mostrarAlumnos(struct ListaEnlazada *miLista) {
-    struct Nodo *aux = malloc(sizeof(struct Nodo));
+    struct Nodo *aux;
     aux = miLista->inicial;
-    printf("\nLista:");
-    int c = 0;
+    printf("\nAlumnos ordenados por legajo:");
     while (aux != NULL) {
 
-        printf("%s %d", "\n", aux->valor);
+        printf("\n%d", aux->valor);
         printf(" %s", aux->alumno->apellido);
         printf(" %s", aux->alumno->nombre);
         printf(" %d", aux->alumno->edad);
         aux = aux->siguiente;
     }
+
 }
-void mostrarAlumnosPorEdad(int paginado, struct ListaEnlazada *miLista, int min, int max) {
-    struct Nodo *aux = malloc(sizeof(struct Nodo));
+void buscarPorRangoEtario(struct ListaEnlazada *miLista, int min, int max) {
+    struct Nodo *aux;
     aux = miLista->inicial;
-    printf("\nLista:");
-    int c = 0;
+    bool encontrado=false;
+    if(max!=min) {
+        printf("\nAlumnos de entre %d %s %d %s: \n", min, "y", max, "años");
+    }else{
+        printf("\nAlumnos de %d %s: \n", min, "años");
+    }
     while (aux != NULL) {
         if(aux->alumno->edad>=min && aux->alumno->edad<=max ) {
-            printf("%s %d", "\n", aux->valor);
+            printf(" %d", aux->valor);
             printf(" %s", aux->alumno->apellido);
             printf(" %s", aux->alumno->nombre);
             printf(" %d", aux->alumno->edad);
-            c++;
+            printf("\n");
+            encontrado=true;
         }
-        char s = 'n';
-        if (c == paginado) {
-            printf("\n Presione 'c' para continuar...\n");
-            scanf("%d", s);
-            if (s = 'c') {
-                c = 0;
-                s = 'v';
-                aux = aux->siguiente;
-            }
-        } else{
-            aux = aux->siguiente;
+        aux = aux->siguiente;
+    }
+    if(encontrado==false){
+        printf("No hubo coincidencias.\n");
+    }
+}
+bool buscarPorLegajo(struct ListaEnlazada *miLista, int legajo) {
+    struct Nodo *aux;
+    bool encontrado=false;
+    aux = miLista->inicial;
+    printf("Alumno con legajo %d%s",legajo,": \n");
+    while (aux != NULL && encontrado==false) {
+        if(aux->alumno->legajo==legajo ) {
+            printf("%d", aux->valor);
+            printf(" %s", aux->alumno->apellido);
+            printf(" %s", aux->alumno->nombre);
+            printf(" %d", aux->alumno->edad);
+            encontrado=true;
+            printf("\n");
         }
+        aux = aux->siguiente;
+    }
+    if(encontrado==false){
+        printf("El legajo solicitado no existe.\n");
+    }
+    return encontrado;
+}
+
+void buscarPorNombre(struct ListaEnlazada *miLista, char nombre[]) {
+    struct Nodo *aux;
+    bool encontrado=false;
+    aux = miLista->inicial;
+    printf("Alumnos con nombre %s%s",nombre,":\n");
+    while (aux != NULL) {
+        if(aux->alumno->nombre==nombre ) {
+            encontrado=true,
+            printf("%d", aux->valor);
+            printf(" %s", aux->alumno->apellido);
+            printf(" %s", aux->alumno->nombre);
+            printf(" %d", aux->alumno->edad);
+            printf("\n");
+        }
+        aux = aux->siguiente;
+    }
+    if(encontrado==false){
+        printf("No hubo coincidencias.\n");
     }
 }
 
-bool listaPorEdad(struct ListaEnlazada *miLista, struct Nodo *nuevo) {
+bool listarPorEdad(struct ListaEnlazada *miLista, struct Nodo *nuevo) {
     bool agregado = false;
     if (miLista->inicial == NULL) {
         miLista->inicial = nuevo;
@@ -104,4 +143,5 @@ bool listaPorEdad(struct ListaEnlazada *miLista, struct Nodo *nuevo) {
                 miLista->cantidadElementos++;
         }
     }
+    return agregado;
 }
