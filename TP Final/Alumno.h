@@ -1,4 +1,5 @@
-
+#include <stdio.h>
+#include <string.h>
 struct Alumno *crearAlumno(int legajo, int edad, char nombre[], char apellido[]) {
     struct Alumno *alumno = malloc(sizeof(struct Alumno));
     alumno->legajo = legajo;
@@ -82,19 +83,30 @@ bool buscarPorLegajo(struct ListaEnlazada *miLista, int legajo) {
     return encontrado;
 }
 
-void buscarPorNombre(struct ListaEnlazada *miLista, char nombre[]) {
+void buscarPorApellido(struct ListaEnlazada *miLista, char *apellido) {
     struct Nodo *aux;
     bool encontrado=false;
     aux = miLista->inicial;
-    printf("Alumnos con nombre %s%s",nombre,":\n");
+    printf("Alumnos con nombre %s%s", apellido, ":\n");
     while (aux != NULL) {
-        if(aux->alumno->nombre==nombre ) {
-            encontrado=true,
-            printf("%d", aux->valor);
+        char a,b;
+        bool iguales=true;
+        if(sizeof (aux->alumno->apellido) == sizeof (apellido)){
+            for(int i=0;i<sizeof apellido && iguales; i++){
+                if(aux->alumno->apellido[i] != apellido[i]){
+                    iguales=false;
+                }
+            }
+        } else{
+            iguales=false;
+        }
+        if(iguales==true){
+            printf("%d", aux->alumno->legajo);
             printf(" %s", aux->alumno->apellido);
             printf(" %s", aux->alumno->nombre);
             printf(" %d", aux->alumno->edad);
             printf("\n");
+            encontrado=true;
         }
         aux = aux->siguiente;
     }

@@ -27,7 +27,7 @@ int mostrarMenu(struct ListaEnlazada *listaAlumnosEdad, struct ListaEnlazada *li
                 case 1:
                     printf("Nombre: ");
                     scanf("%s", nombre);
-                    buscarPorNombre(listaAlumnosLegajo, nombre);
+                    buscarPorApellido(listaAlumnosLegajo, nombre);
                     break;
                 case 2:
                     printf("Edad minima: ");
