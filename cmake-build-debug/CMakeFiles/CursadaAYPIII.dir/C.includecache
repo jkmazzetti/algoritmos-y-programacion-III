@@ -7,6 +7,22 @@
 #IncludeRegexTransform: 
 
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Alumno.h
+stdio.h
+-
+string.h
+-
+
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Carrera.h
+
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Interfaz.h
+Lista.h
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Lista.h
+Alumno.h
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Alumno.h
+Materia.h
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Materia.h
+Carrera.h
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Carrera.h
 
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Lista.h
 stdio.h
@@ -17,16 +33,12 @@ stdbool.h
 -
 
 /home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Materia.h
-
-/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/interfazUsuario.h
-Lista.h
-/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Lista.h
-Alumno.h
-/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Alumno.h
-Materia.h
-/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Materia.h
+stdio.h
+-
+string.h
+-
 
 /home/ubuntu/CLionProjects/cursada-2021-apiii/main.c
-TP Final/interfazUsuario.h
-/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/interfazUsuario.h
+TP Final/Interfaz.h
+/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Interfaz.h
 

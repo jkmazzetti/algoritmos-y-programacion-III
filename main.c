@@ -1,10 +1,15 @@
-#include "TP Final/interfazUsuario.h"
+#include "TP Final/Interfaz.h"
+
 
 int main() {
     int legajo=5000;
-    struct ListaEnlazada *listaAlumnosPorLegajo = crearLista();
-    struct ListaEnlazada *listaAlumnosPorEdad = crearLista();
-    mostrarMenu(listaAlumnosPorEdad,listaAlumnosPorLegajo,legajo);
+    int codigoMateria=50;
+    int codigoCarrera=100;
+    struct ListaEnlazada *listaAlumnosLegajo = crearLista();
+    struct ListaEnlazada *listaAlumnosEdad = crearLista();
+    struct ListaEnlazada *listaMaterias = crearLista();
+    struct ListaEnlazada *listaCarreras = crearLista();
+    menuPrincipal(listaMaterias, listaCarreras, listaAlumnosEdad, listaAlumnosLegajo, legajo, codigoMateria, codigoCarrera);
     return 0;
 }
 

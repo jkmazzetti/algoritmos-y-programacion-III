@@ -61,10 +61,11 @@ void buscarPorRangoEtario(struct ListaEnlazada *miLista, int min, int max) {
         printf("No hubo coincidencias.\n");
     }
 }
-bool buscarPorLegajo(struct ListaEnlazada *miLista, int legajo) {
+struct Alumno *buscarPorLegajo(struct ListaEnlazada *miLista, int legajo) {
     struct Nodo *aux;
     bool encontrado=false;
     aux = miLista->inicial;
+    struct Alumno *a;
     printf("Alumno con legajo %d%s",legajo,": \n");
     while (aux != NULL && encontrado==false) {
         if(aux->alumno->legajo==legajo ) {
@@ -74,13 +75,14 @@ bool buscarPorLegajo(struct ListaEnlazada *miLista, int legajo) {
             printf(" %d", aux->alumno->edad);
             encontrado=true;
             printf("\n");
+            a=aux->alumno;
         }
         aux = aux->siguiente;
     }
     if(encontrado==false){
         printf("El legajo solicitado no existe.\n");
     }
-    return encontrado;
+    return a;
 }
 
 void buscarPorApellido(struct ListaEnlazada *miLista, char *apellido) {
