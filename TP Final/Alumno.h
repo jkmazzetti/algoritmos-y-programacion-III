@@ -20,7 +20,7 @@ bool inscribirAMateria(struct Alumno *alumno, struct Nodo *materia) {
         agregarElemetoPorClave(alumno->materiasEnCurso, materia);
         inscripto = true;
     } else {
-        alumno->alcanzoLimite=true;
+        alumno->alcanzoLimite = true;
         printf("Alconzó el limite de materias que puede cursar.");
     }
     return inscripto;
@@ -107,10 +107,10 @@ void buscarPorApellido(struct ListaEnlazada *miLista, char *apellido) {
     while (aux != NULL) {
         bool iguales = true;
         for (int i = 0; i < sizeof apellido && iguales; i++) {
-                if (aux->alumno->apellido[i] != apellido[i]) {
-                    iguales = false;
-                }
+            if (aux->alumno->apellido[i] != apellido[i]) {
+                iguales = false;
             }
+        }
         if (iguales == true) {
             printf("%d", aux->alumno->legajo);
             printf(" %s", aux->alumno->apellido);

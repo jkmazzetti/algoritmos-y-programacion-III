@@ -1,59 +1,60 @@
 #include "TP Final/Interfaz.h"
 
 int main() {
-    int legajo=5000;
-    int codigoMateria=50;
-    int codigoCarrera=100;
-    struct Carrera *ingAmb,*ingSonido,*enfermeria;
+    int legajo = 5000;
+    int codigoMateria = 50;
+    int codigoCarrera = 100;
+    struct Carrera *ingAmb, *ingSonido, *enfermeria;
 
-    struct Materia *fisica,*analisis,*quimica, *algebra,*geologia, *biologia, *recursosNaturales,*primerosAuxilios,*acustica;
+    struct Materia *fisica, *analisis, *quimica, *algebra, *geologia, *biologia, *recursosNaturales, *primerosAuxilios, *acustica;
 
-    fisica=crearMateria(codigoMateria++,"Fisica");
-    analisis=crearMateria(codigoMateria++,"Análisis");
-    quimica=crearMateria(codigoMateria++,"Química");
-    algebra=crearMateria(codigoMateria++,"Álgebra");
-    geologia=crearMateria(codigoMateria++,"Geología");
-    biologia=crearMateria(codigoMateria++,"Biología");
-    recursosNaturales=crearMateria(codigoMateria++,"Recursos Naturales");
-    primerosAuxilios=crearMateria(codigoMateria++,"Primeros auxilios");
-    acustica=crearMateria(codigoMateria++,"Acústica");
-    ingAmb=crearCarrera(codigoCarrera++,"Ingeniería Ambiental");
-    ingSonido=crearCarrera(codigoCarrera++,"Ingenieria en Sonido");
-    enfermeria=crearCarrera(codigoCarrera++,"Enfermería");
+    fisica = crearMateria(codigoMateria++, "Fisica");
+    analisis = crearMateria(codigoMateria++, "Análisis");
+    quimica = crearMateria(codigoMateria++, "Química");
+    algebra = crearMateria(codigoMateria++, "Álgebra");
+    geologia = crearMateria(codigoMateria++, "Geología");
+    biologia = crearMateria(codigoMateria++, "Biología");
+    recursosNaturales = crearMateria(codigoMateria++, "Recursos Naturales");
+    primerosAuxilios = crearMateria(codigoMateria++, "Primeros auxilios");
+    acustica = crearMateria(codigoMateria++, "Acústica");
+    ingAmb = crearCarrera(codigoCarrera++, "Ingeniería Ambiental");
+    ingSonido = crearCarrera(codigoCarrera++, "Ingenieria en Sonido");
+    enfermeria = crearCarrera(codigoCarrera++, "Enfermería");
     //agregar materias a carreras
-    agregarElemetoPorClave(ingAmb->materias,nodoMateria(fisica));
-    agregarElemetoPorClave(ingAmb->materias,nodoMateria(analisis));
-    agregarElemetoPorClave(ingAmb->materias,nodoMateria(geologia));
-    agregarElemetoPorClave(ingAmb->materias,nodoMateria(quimica));
-    agregarElemetoPorClave(ingAmb->materias,nodoMateria(algebra));
-    agregarElemetoPorClave(ingAmb->materias,nodoMateria(biologia));
-    agregarElemetoPorClave(ingAmb->materias,nodoMateria(recursosNaturales));
-    agregarElemetoPorClave(ingSonido->materias,nodoMateria(acustica));
-    agregarElemetoPorClave(ingSonido->materias,nodoMateria(fisica));
-    agregarElemetoPorClave(ingSonido->materias,nodoMateria(analisis));
-    agregarElemetoPorClave(enfermeria->materias,nodoMateria(primerosAuxilios));
-    agregarElemetoPorClave(enfermeria->materias,nodoMateria(algebra));
-    agregarElemetoPorClave(enfermeria->materias,nodoMateria(quimica));
-    agregarElemetoPorClave(enfermeria->materias,nodoMateria(biologia));
+    agregarElemetoPorClave(ingAmb->materias, nodoMateria(fisica));
+    agregarElemetoPorClave(ingAmb->materias, nodoMateria(analisis));
+    agregarElemetoPorClave(ingAmb->materias, nodoMateria(geologia));
+    agregarElemetoPorClave(ingAmb->materias, nodoMateria(quimica));
+    agregarElemetoPorClave(ingAmb->materias, nodoMateria(algebra));
+    agregarElemetoPorClave(ingAmb->materias, nodoMateria(biologia));
+    agregarElemetoPorClave(ingAmb->materias, nodoMateria(recursosNaturales));
+    agregarElemetoPorClave(ingSonido->materias, nodoMateria(acustica));
+    agregarElemetoPorClave(ingSonido->materias, nodoMateria(fisica));
+    agregarElemetoPorClave(ingSonido->materias, nodoMateria(analisis));
+    agregarElemetoPorClave(enfermeria->materias, nodoMateria(primerosAuxilios));
+    agregarElemetoPorClave(enfermeria->materias, nodoMateria(algebra));
+    agregarElemetoPorClave(enfermeria->materias, nodoMateria(quimica));
+    agregarElemetoPorClave(enfermeria->materias, nodoMateria(biologia));
     struct ListaEnlazada *listaAlumnosLegajo = crearLista();
     struct ListaEnlazada *listaAlumnosEdad = crearLista();
     struct ListaEnlazada *listaMaterias = crearLista();
     struct ListaEnlazada *listaCarreras = crearLista();
     //agregar carrera a lista
-    agregarElemetoPorClave(listaCarreras,nodoCarrera(ingAmb));
-    agregarElemetoPorClave(listaCarreras,nodoCarrera(ingSonido));
-    agregarElemetoPorClave(listaCarreras,nodoCarrera(enfermeria));
+    agregarElemetoPorClave(listaCarreras, nodoCarrera(ingAmb));
+    agregarElemetoPorClave(listaCarreras, nodoCarrera(ingSonido));
+    agregarElemetoPorClave(listaCarreras, nodoCarrera(enfermeria));
     //agregar materias a lista
-    agregarElemetoPorClave(listaMaterias,nodoMateria(fisica));
-    agregarElemetoPorClave(listaMaterias,nodoMateria(analisis));
-    agregarElemetoPorClave(listaMaterias,nodoMateria(geologia));
-    agregarElemetoPorClave(listaMaterias,nodoMateria(quimica));
-    agregarElemetoPorClave(listaMaterias,nodoMateria(algebra));
-    agregarElemetoPorClave(listaMaterias,nodoMateria(biologia));
-    agregarElemetoPorClave(listaMaterias,nodoMateria(recursosNaturales));
-    agregarElemetoPorClave(listaMaterias,nodoMateria(primerosAuxilios));
-    agregarElemetoPorClave(listaMaterias,nodoMateria(acustica));
-    menuPrincipal(listaMaterias, listaCarreras, listaAlumnosEdad, listaAlumnosLegajo, legajo, codigoMateria, codigoCarrera);
+    agregarElemetoPorClave(listaMaterias, nodoMateria(fisica));
+    agregarElemetoPorClave(listaMaterias, nodoMateria(analisis));
+    agregarElemetoPorClave(listaMaterias, nodoMateria(geologia));
+    agregarElemetoPorClave(listaMaterias, nodoMateria(quimica));
+    agregarElemetoPorClave(listaMaterias, nodoMateria(algebra));
+    agregarElemetoPorClave(listaMaterias, nodoMateria(biologia));
+    agregarElemetoPorClave(listaMaterias, nodoMateria(recursosNaturales));
+    agregarElemetoPorClave(listaMaterias, nodoMateria(primerosAuxilios));
+    agregarElemetoPorClave(listaMaterias, nodoMateria(acustica));
+    menuPrincipal(listaMaterias, listaCarreras, listaAlumnosEdad, listaAlumnosLegajo, legajo, codigoMateria,
+                  codigoCarrera);
     return 0;
 }
 
