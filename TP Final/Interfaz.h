@@ -132,7 +132,11 @@ void menuAlumnos(struct ListaEnlazada *listaMaterias, struct ListaEnlazada *list
 
                                 break;
                             case 4:
-                                mostrarMaterias(alumno->materiasAprobadas);
+                                if(alumno->materiasAprobadas->cantidadElementos==0){
+                                    printf("No hay información disponible.\n");
+                                } else {
+                                    mostrarMaterias(alumno->materiasAprobadas);
+                                }
                                 menuAlumnos(listaMaterias, listaCarreras, listaAlumnosEdad, listaAlumnosLegajo, legajo,
                                             codigoMateria, codigoCarrera);
 

@@ -21,7 +21,11 @@ bool inscribirAMateria(struct Alumno *alumno, struct Nodo *materia) {
         inscripto = true;
     } else {
         alumno->alcanzoLimite = true;
-        printf("Alconzó el limite de materias que puede cursar.");
+        if(alumno->materiasEnCurso->cantidadElementos == limite) {
+            printf("Alconzó el limite de materias que puede cursar.\n");
+        } else{
+            printf("Ya aprobó esta materia.\n");
+        }
     }
     return inscripto;
 }
