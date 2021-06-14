@@ -103,7 +103,7 @@ bool buscarElemento(struct ListaEnlazada *miLista, int valor) {
     return resultado;
 }
 
-bool eliminarElemento(struct ListaEnlazada *miLista, int valor) {
+bool eliminarElementoPorClave(struct ListaEnlazada *miLista, int valor) {
     bool eliminado = false;
     struct Nodo *auxAnt = malloc(sizeof(struct Nodo));
     struct Nodo *auxSig = malloc(sizeof(struct Nodo));

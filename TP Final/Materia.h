@@ -8,20 +8,12 @@ struct Materia *crearMateria(int codigo, char *nombre) {
 }
 
 void mostrarMaterias(struct ListaEnlazada *miLista) {
-    struct Nodo *aux = malloc(sizeof(struct Nodo));
+    struct Nodo *aux;
     aux = miLista->inicial;
-    printf("\nLista:");
-    int c = 0;
     while (aux != NULL) {
-        printf(" %s", aux->materia->nombre);
-        printf(" %d\n", aux->materia->codigo);
+        printf(" %d", aux->materia->codigo);
+        printf(" %s\n", aux->materia->nombre);
         aux = aux->siguiente;
-    }
-}
-void calificarMateria(struct Alumno *alumno,struct Nodo *materia,double nota){
-    eliminarElemento(alumno->materiasEnCurso,materia->valor);
-    if(nota>=4){
-    agregarElemetoPorClave(alumno->materiasAprobadas,materia);
     }
 }
 
@@ -45,4 +37,24 @@ struct Materia *buscarMateria(struct ListaEnlazada *miLista, int codigo) {
         printf("La materia solicitada no existe.\n");
     }
     return m;
+}
+
+void calificar(struct Alumno *alumno, int codigo, int nota) {
+    struct Materia *materia=malloc(sizeof (struct Nodo));
+    bool exite=buscarElemento(alumno->materiasEnCurso,codigo);
+    if(exite==true) {
+        materia->codigo=codigo;
+        materia->nombre=buscarMateria(alumno->materiasEnCurso,codigo)->nombre;
+        materia->nota=nota;
+        if(eliminarElementoPorClave(alumno->materiasEnCurso,codigo)==true && nota>4) {
+            agregarElemetoPorClave(alumno->materiasAprobadas, nodoMateria(materia));
+            if(alumno->materiasAprobadas->cantidadElementos==0){
+                alumno->promedio=nota;
+            } else{
+                alumno->promedio+=nota;
+                alumno->promedio/=2;
+            }
+        }
+
+    }
 }

@@ -12,9 +12,10 @@ struct ListaEnlazada {
         struct Materia{
             char *nombre;
             int codigo;
-            double nota;
+            int nota;
         }Materia;
         struct Alumno{
+            bool alcanzoLimite;
             char *nombre;
             char *apellido;
             int edad;
@@ -106,6 +107,7 @@ void mostrar(struct ListaEnlazada *miLista) {
 
 bool buscarElemento(struct ListaEnlazada *miLista, int valor) {
     bool resultado = false;
+    struct Nodo *elemento=NULL;
     if (valor == miLista->mayor || valor == miLista->menor) {
         resultado = true;
     }else if (valor < miLista->menor || valor > miLista->mayor) {
@@ -115,16 +117,18 @@ bool buscarElemento(struct ListaEnlazada *miLista, int valor) {
         aux = miLista->inicial;
         while (resultado == false && aux->siguiente != NULL) {
             if (aux->valor == valor) {
+                elemento=aux;
                 resultado = true;
+            } else {
+                aux = aux->siguiente;
             }
-            aux = aux->siguiente;
         }
 
     }
     return resultado;
 }
 
-bool eliminarElemento(struct ListaEnlazada *miLista, int valor) {
+bool eliminarElementoPorClave(struct ListaEnlazada *miLista, int valor) {
     bool eliminado = false;
     struct Nodo *auxAnt = malloc(sizeof(struct Nodo));
     struct Nodo *auxSig;
@@ -179,9 +183,9 @@ bool agregarElemetoPorClave(struct ListaEnlazada *miLista, struct Nodo *nuevo) {
             miLista->menor = nuevo->valor;
             nuevo->siguiente = miLista->inicial;
             miLista->inicial = nuevo;
-            miLista->cantidadElementos++;
             existe = true;
             agregado=true;
+            miLista->cantidadElementos++;
         }
         struct Nodo *auxSig;
         struct Nodo *auxAnt;
@@ -211,6 +215,7 @@ bool agregarElemetoPorClave(struct ListaEnlazada *miLista, struct Nodo *nuevo) {
 
 struct Nodo *nodoAlumno(struct Alumno *alumno){
     struct Nodo *nuevoNodo=malloc(sizeof (struct Nodo));
+    nuevoNodo->carrera=NULL;
     nuevoNodo->alumno=alumno;
     nuevoNodo->materia=NULL;
     nuevoNodo->siguiente=NULL;
@@ -219,9 +224,19 @@ struct Nodo *nodoAlumno(struct Alumno *alumno){
 }
 struct Nodo *nodoMateria(struct Materia *materia){
     struct Nodo *nuevoNodo=malloc(sizeof (struct Nodo));
+    nuevoNodo->carrera=NULL;
     nuevoNodo->alumno=NULL;
     nuevoNodo->materia=materia;
     nuevoNodo->siguiente=NULL;
     nuevoNodo->valor=materia->codigo;
+    return  nuevoNodo;
+}
+struct Nodo *nodoCarrera(struct Carrera *carrera){
+    struct Nodo *nuevoNodo=malloc(sizeof (struct Nodo));
+    nuevoNodo->alumno=NULL;
+    nuevoNodo->materia=NULL;
+    nuevoNodo->siguiente=NULL;
+    nuevoNodo->valor=carrera->codigo;
+    nuevoNodo->carrera=carrera;
     return  nuevoNodo;
 }
