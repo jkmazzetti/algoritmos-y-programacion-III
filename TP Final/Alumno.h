@@ -5,8 +5,10 @@ struct Alumno *crearAlumno(int legajo, int edad, char nombre[], char apellido[])
     struct Alumno *alumno = malloc(sizeof(struct Alumno));
     alumno->legajo = legajo;
     alumno->edad = edad;
-    alumno->apellido = apellido;
-    alumno->nombre = nombre;
+    for(int i=0;i<sizeof (alumno->nombre);i++){
+        alumno->apellido[i]=apellido[i];
+        alumno->nombre[i] = nombre[i];
+    }
     alumno->materiasAprobadas = crearLista();
     alumno->materiasEnCurso = crearLista();
     return alumno;
@@ -35,14 +37,14 @@ void mostrarAlumnos(struct ListaEnlazada *miLista) {
     aux = miLista->inicial;
     printf("\nAlumnos ordenados por legajo:");
     while (aux != NULL) {
-        printf("\n%d", aux->valor);
+        printf("\n    %d", aux->valor);
         printf(" %s", aux->alumno->apellido);
         printf(" %s", aux->alumno->nombre);
         printf(" %d", aux->alumno->edad);
         if (aux->alumno->carrera != NULL) {
             printf(" %s", aux->alumno->carrera->nombre);
         } else {
-            printf(" No disponible");
+            printf(" Inscribir a Carrera.");
         }
         aux = aux->siguiente;
     }
@@ -78,7 +80,7 @@ struct Alumno *buscarPorLegajo(struct ListaEnlazada *miLista, int legajo) {
     struct Nodo *aux;
     bool encontrado = false;
     aux = miLista->inicial;
-    struct Alumno *a;
+    struct Alumno *a=NULL;
     printf("Alumno con legajo %d%s", legajo, ": \n");
     while (aux != NULL && encontrado == false) {
         if (aux->alumno->legajo == legajo) {
@@ -103,7 +105,7 @@ struct Alumno *buscarPorLegajo(struct ListaEnlazada *miLista, int legajo) {
     return a;
 }
 
-void buscarPorApellido(struct ListaEnlazada *miLista, char *apellido) {
+void buscarPorApellido(struct ListaEnlazada *miLista, char apellido[]) {
     struct Nodo *aux;
     bool encontrado = false;
     aux = miLista->inicial;
@@ -179,6 +181,7 @@ bool eliminarDeListaOrdenadaPorEdad(struct ListaEnlazada *miLista, int legajo) {
     auxSig = miLista->inicial;
     if (miLista->inicial->valor == legajo) {
         miLista->inicial = miLista->inicial->siguiente;
+        eliminado = true;
     } else {
         while (auxSig->siguiente != NULL && eliminado == false) {
             auxAnt = auxSig;

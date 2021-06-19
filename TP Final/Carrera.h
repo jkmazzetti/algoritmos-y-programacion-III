@@ -1,7 +1,9 @@
-struct Carrera *crearCarrera(int codigo, char *nombre) {
+struct Carrera *crearCarrera(int codigo, char nombre[]) {
     struct Carrera *carrera = malloc(sizeof(struct Materia));
     carrera->codigo = codigo;
-    carrera->nombre = nombre;
+    for(int i=0;i<sizeof (carrera->nombre);i++){
+        carrera->nombre[i]=nombre[i];
+    }
     carrera->materias = crearLista();
     return carrera;
 }
@@ -22,7 +24,6 @@ struct Carrera *buscarCarrera(struct ListaEnlazada *miLista, int codigo) {
                 mostrarMaterias(c->materias);
             }
             encontrado = true;
-            printf("\n");
         }
         aux = aux->siguiente;
     }
@@ -33,10 +34,10 @@ struct Carrera *buscarCarrera(struct ListaEnlazada *miLista, int codigo) {
 }
 
 void mostrarCarreras(struct ListaEnlazada *miLista) {
-    struct Nodo *aux = malloc(sizeof(struct Nodo));
+    struct Nodo *aux;
     aux = miLista->inicial;
     while (aux != NULL) {
-        printf(" %d", aux->carrera->codigo);
+        printf("    %d", aux->carrera->codigo);
         printf(" %s\n", aux->carrera->nombre);
         aux = aux->siguiente;
     }

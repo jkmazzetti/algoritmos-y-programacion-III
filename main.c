@@ -14,11 +14,11 @@ int main() {
     algebra = crearMateria(codigoMateria++, "Álgebra");
     geologia = crearMateria(codigoMateria++, "Geología");
     biologia = crearMateria(codigoMateria++, "Biología");
-    recursosNaturales = crearMateria(codigoMateria++, "Recursos Naturales");
-    primerosAuxilios = crearMateria(codigoMateria++, "Primeros auxilios");
+    recursosNaturales = crearMateria(codigoMateria++, "RecursosNaturales");
+    primerosAuxilios = crearMateria(codigoMateria++, "PrimerosAuxilios");
     acustica = crearMateria(codigoMateria++, "Acústica");
-    ingAmb = crearCarrera(codigoCarrera++, "Ingeniería Ambiental");
-    ingSonido = crearCarrera(codigoCarrera++, "Ingenieria en Sonido");
+    ingAmb = crearCarrera(codigoCarrera++, "IngenieríaAmbiental");
+    ingSonido = crearCarrera(codigoCarrera++, "IngenieriaEnSonido");
     enfermeria = crearCarrera(codigoCarrera++, "Enfermería");
     //agregar materias a carreras
     agregarElemetoPorClave(ingAmb->materias, nodoMateria(fisica));

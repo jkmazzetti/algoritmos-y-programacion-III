@@ -6,18 +6,18 @@ struct ListaEnlazada {
     struct Nodo {
         struct Carrera {
             int codigo;
-            char *nombre;
+            char nombre[30];
             struct ListaEnlazada *materias;
         } Carrera;
         struct Materia {
-            char *nombre;
+            char nombre[30];
             int codigo;
             int nota;
         } Materia;
         struct Alumno {
             bool alcanzoLimite;
-            char *nombre;
-            char *apellido;
+            char nombre[30];
+            char apellido[30];
             int edad;
             int legajo;
             double promedio;

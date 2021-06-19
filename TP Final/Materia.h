@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-struct Materia *crearMateria(int codigo, char *nombre) {
+struct Materia *crearMateria(int codigo, char nombre[]) {
     struct Materia *materia = malloc(sizeof(struct Materia));
     materia->codigo = codigo;
-    materia->nombre = nombre;
+    for(int i=0;i<sizeof (materia->nombre);i++){
+        materia->nombre[i] = nombre[i];
+    }
+
     return materia;
 }
 
@@ -13,9 +16,13 @@ void mostrarMaterias(struct ListaEnlazada *miLista) {
     aux = miLista->inicial;
     while (aux != NULL) {
         printf(" %d", aux->materia->codigo);
-        printf(" %s\n", aux->materia->nombre);
+        printf(" %s", aux->materia->nombre);
+        if(aux->siguiente!=NULL){
+            printf("\n");
+        }
         aux = aux->siguiente;
     }
+    printf("\n");
 }
 
 struct Materia *buscarMateria(struct ListaEnlazada *miLista, int codigo) {
@@ -42,14 +49,18 @@ struct Materia *buscarMateria(struct ListaEnlazada *miLista, int codigo) {
 
 void calificar(struct Alumno *alumno, int codigo, int nota) {
     struct Materia *materia = malloc(sizeof(struct Nodo));
+    char *nombre;
     bool exite = buscarElemento(alumno->materiasEnCurso, codigo);
     if (exite == true) {
         materia->codigo = codigo;
-        materia->nombre = buscarMateria(alumno->materiasEnCurso, codigo)->nombre;
+        nombre=buscarMateria(alumno->materiasEnCurso, codigo)->nombre;
+        for(int i=0;i<sizeof (materia->nombre);i++) {
+            materia->nombre[i] =nombre[i];
+        }
         materia->nota = nota;
-        if (eliminarElementoPorClave(alumno->materiasEnCurso, codigo) == true && nota > 4) {
+        if (eliminarElementoPorClave(alumno->materiasEnCurso, codigo) == true && nota >= 4) {
             agregarElemetoPorClave(alumno->materiasAprobadas, nodoMateria(materia));
-            if (alumno->materiasAprobadas->cantidadElementos == 0) {
+            if (alumno->materiasAprobadas->cantidadElementos==1) {
                 alumno->promedio = nota;
             } else {
                 alumno->promedio += nota;
