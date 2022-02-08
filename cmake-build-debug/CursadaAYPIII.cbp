@@ -76,6 +76,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Alumno.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Interfaz.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Lista.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP Final/Materia.h">
+			<Option target="CursadaAYPIII"/>
+		</Unit>
 		<Unit filename="/home/ubuntu/CLionProjects/cursada-2021-apiii/TP1/caracteres.h">
 			<Option target="CursadaAYPIII"/>
 		</Unit>
